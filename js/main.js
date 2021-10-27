@@ -54,6 +54,18 @@ const showData = function(data) {
                         </tr> 
                         `;
     }
-    console.log(employeeRow);
     document.getElementsByClassName("employeeDetails")[0].innerHTML = employeeHeader + employeeRow + '</tbody>';
+};
+
+const getEmployeeDetails = function () {
+    console.log(document.querySelector('.employeeName').value);
+    let name =document.querySelector('.employeeName').value;
+    http.postApi(url, {'name' : name, "adress": 'abcd'});
+};
+
+const onEmployeeAdd = function () {
+    getEmployeeDetails();
 }
+
+document.getElementsByClassName('addEmployee')[0]
+.addEventListener('click', onEmployeeAdd);
